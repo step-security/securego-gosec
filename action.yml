@@ -1,0 +1,19 @@
+name: "Gosec Security Checker"
+description: "Runs the gosec security checker"
+author: 'step-security'
+
+inputs:
+  args:
+    description: "Arguments for gosec"
+    required: true
+    default: "-h"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.args }}
+
+branding:
+  icon: "shield"
+  color: "blue"
